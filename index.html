@@ -140,17 +140,42 @@
     margin: 0;
     font-size: 14px;
   }
+
+  .dark-mode {
+    background-color: #111;
+    color: #fff;
+  }
+
+  /* Update styles for light mode */
+  .light-mode {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .mode-switcher {
+    margin-right: 2rem;
+  }
+
   </style>
   <title>Sojan SiR</title>
 </head>
 <body>
   <header class="header">
     <div class="logo">Sojan SiR</div>
+    <div class="mode-switcher" id="modeSwitcher">
+        <span class="mode-label">Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="modeCheckbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
     <div class="hamburger" id="hamburger">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
+
+ 
   </header>
   
   <div class="container">
@@ -257,6 +282,22 @@
     closeButton.addEventListener('click', () => {
       sidebar.classList.remove('active');
     });
+
+    const modeSwitcher = document.getElementById('modeSwitcher');
+  const modeCheckbox = document.getElementById('modeCheckbox');
+  const body = document.body;
+
+  modeCheckbox.addEventListener('change', () => {
+    if (modeCheckbox.checked) {
+      body.classList.add('dark-mode');
+      body.classList.remove('light-mode');
+      modeSwitcher.querySelector('.mode-label').textContent = 'Light Mode';
+    } else {
+      body.classList.add('light-mode');
+      body.classList.remove('dark-mode');
+      modeSwitcher.querySelector('.mode-label').textContent = 'Dark Mode';
+    }
+  });
   </script>
 </body>
 </html>
