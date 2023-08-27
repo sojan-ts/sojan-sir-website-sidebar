@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    .header {
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px 20px 15px;
+    background-color: #333;
+    color: #fff;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    }
+    
+    .logo {
+      font-size: 24px;
+    }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 2px 0;
+    }
+    
+    .container {
+      display: flex;
+    }
+    
+    .sidebar {
+        width: 250px;
+    background-color: #555;
+    color: #fff;
+    transition: transform 0.3s;
+    z-index: 2;
+    height: 100%;
+    position: fixed;
+    padding-top: 70px;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    }
+    
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .nav {
+        padding-bottom: 5rem;
+    }
+    
+    .sidebar nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .sidebar nav ul li {
+      padding: 10px;
+    }
+    
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      padding-top: 65px;
+      margin-left: 250px; /* Adjust for the sidebar width */
+    }
+    
+    .close-button {
+      display: none;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+        margin-right: 2rem;
+      }
+
+      nav {
+        padding-bottom: 5rem;
+      }
+      
+      .sidebar {
+        width: 100%; /* Full width on mobile */
+        transform: translateX(-100%);
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+      
+      .close-button {
+        display: block;
+      }
+      
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .sidebar.active {
+        transform: translateX(0);
+      }
+    }
+    .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  </style>
+  <title>Sojan SiR</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Sojan SiR</div>
+    <div class="hamburger" id="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </header>
+  
+  <div class="container">
+    <aside class="sidebar" id="sidebar">
+      <button class="close-button" id="closeButton">Close</button>
+      <nav>
+        <ul>
+          <li><a href="#">Topic 1</a></li>
+          <li><a href="#">Topic 2</a></li>
+          <li><a href="#">Topic 3</a></li>
+          <li><a href="#">Topic 4</a></li>
+          <li><a href="#">Topic 1</a></li>
+          <li><a href="#">Topic 2</a></li>
+          <li><a href="#">Topic 3</a></li>
+          <li><a href="#">Topic 4</a></li>
+          <li><a href="#">Topic 1</a></li>
+          <li><a href="#">Topic 2</a></li>
+          <li><a href="#">Topic 3</a></li>
+          <li><a href="#">Topic 4</a></li>
+          <li><a href="#">Topic 1</a></li>
+          <li><a href="#">Topic 2</a></li>
+          <li><a href="#">Topic 3</a></li>
+          <li><a href="#">Topic 4</a></li>
+          <li><a href="#">Topic 1</a></li>
+          <li><a href="#">Topic 2</a></li>
+          <li><a href="#">Topic 3</a></li>
+          <li><a href="#">Topic 4</a></li>
+          <li><a href="#">Topic 1</a></li>
+          <li><a href="#">Topic 2</a></li>
+          <li><a href="#">Topic 3</a></li>
+          <li><a href="#">Topic 4</a></li>
+        </ul>
+      </nav>
+    </aside>
+    
+    <main class="main-content">
+      <h1>Main Content</h1>
+      <p>This is the main content area of the website.</p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+
+      </p>
+    </main>
+
+  
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; <span id="currentYear"></span> sojansir. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Your JavaScript code here
+    const hamburger = document.getElementById('hamburger');
+    const closeButton = document.getElementById('closeButton');
+    const sidebar = document.getElementById('sidebar');
+
+     // Get the current year
+  const currentYear = new Date().getFullYear();
+  const currentYearElement = document.getElementById('currentYear');
+  currentYearElement.textContent = currentYear;
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+
+    closeButton.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
